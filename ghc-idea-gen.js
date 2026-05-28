@@ -4,6 +4,14 @@
 (function() {
 const IDEAS = (typeof GHC_IDEAS !== 'undefined' && Array.isArray(GHC_IDEAS)) ? GHC_IDEAS : [];
 
+  // Defense-in-depth HTML escaper for data interpolated into innerHTML.
+  // Trust boundary today = anyone with push access to jake-src/ghc26.
+  function escapeHtml(s) {
+    if (s == null) return '';
+    return String(s).replace(/[&<>"']/g, function(c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
 
   let lastIndex = -1;
 
@@ -26,7 +34,7 @@ const IDEAS = (typeof GHC_IDEAS !== 'undefined' && Array.isArray(GHC_IDEAS)) ? G
     if (!card || !typeEl || !titleEl || !sparkEl) return;
     let levelUp = card.querySelector(".idea-gen-levelup");
     lastIndex = idx;
-    typeEl.innerHTML = '<span class="inspo-badge ' + idea.badge + '">' + idea.type + '</span><span class="idea-gen-stars">' + starsHtml + '</span>';
+    typeEl.innerHTML = '<span class="inspo-badge ' + escapeHtml(idea.badge) + '">' + escapeHtml(idea.type) + '</span><span class="idea-gen-stars">' + starsHtml + '</span>';
     titleEl.textContent = idea.title;
     sparkEl.textContent = idea.spark;
     if (!levelUp) {
@@ -34,7 +42,7 @@ const IDEAS = (typeof GHC_IDEAS !== 'undefined' && Array.isArray(GHC_IDEAS)) ? G
       levelUp.className = "idea-gen-levelup";
       card.appendChild(levelUp);
     }
-    levelUp.innerHTML = '<span class="idea-gen-levelup-label">⭐️ Social Challenge</span>' + cleanLevelUp;
+    levelUp.innerHTML = '<span class="idea-gen-levelup-label">⭐️ Social Challenge</span>' + escapeHtml(cleanLevelUp);
   }
 
   function shuffleIdea() {
@@ -69,7 +77,13 @@ const IDEAS = (typeof GHC_IDEAS !== 'undefined' && Array.isArray(GHC_IDEAS)) ? G
     setTimeout(function() {
       const titleEl = document.getElementById("ideaTitle");
       if (titleEl && titleEl.textContent.trim() === "Loading...") {
-        titleEl.innerHTML = 'Loading... &nbsp;<a href="#" onclick="event.preventDefault();location.reload();" style="font-size:0.78rem;font-weight:600;color:#C8102E;text-decoration:underline;text-underline-offset:2px;">Refresh page</a>';
+        titleEl.textContent = 'Loading... ';
+        const link = document.createElement('a');
+        link.href = '#';
+        link.textContent = 'Refresh page';
+        link.setAttribute('style', 'font-size:0.78rem;font-weight:600;color:#C8102E;text-decoration:underline;text-underline-offset:2px;margin-left:6px;');
+        link.addEventListener('click', function(e) { e.preventDefault(); location.reload(); });
+        titleEl.appendChild(link);
       }
     }, 3000);
   })();
