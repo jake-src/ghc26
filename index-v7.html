@@ -15,16 +15,32 @@
         <img src="https://redcross.sg/images/2026/eFR/GHD-Photomix-SQ1.jpg" alt="Grateful Hearts Campaign 2026 — Humanity in Action" />
       </div>
       <div class="hero-col hero-col-generator">
-        <div id="deeda-donate" style="scroll-margin-top:80px;">
-        		<div class="iframe-wrapper">
-				      <iframe src="https://www.deeda.care/sg/f/donate-iframe?widgetNo=8af7c8d8-4777-413e-817b-2a8ae6827281&amp;language=en&amp;mode=inline-form&amp;deviceMode=h5" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" height="640" width="335"></iframe>
+        <div class="idea-gen-full">
+          <div class="idea-gen" id="ideaGen">
+            <div class="idea-gen-left">
+              <div class='idea-gen-hero-img'>
+                <img src='https://redcross.sg/images/2026/eFR/ghc-generator.jpg' alt='Fundraiser Idea Generator — GHC 2026' style='width:100%;height:180px;object-fit:cover;border-radius:10px;background:#e8f5fb;display:block;margin-bottom:16px;'>
+              </div>
+              <div class="idea-gen-header">
+                <span class="idea-gen-label">Fundraiser Idea Generator</span>
+                <p class="idea-gen-sub">Not sure how you can help? Generate an idea to get inspired!</p>
+              </div>
+            </div>
+            <div class="idea-gen-right">
+              <div class="idea-gen-card" id="ideaCard">
+                <div class="idea-gen-type" id="ideaType"></div>
+                <div class="idea-gen-title" id="ideaTitle">Loading...</div>
+                <p class="idea-gen-spark" id="ideaSpark"></p>
+              </div>
+              <button class="idea-gen-shuffle" onclick="shuffleIdea()">↻ Show me another idea</button>
+              <a href="#action-section" id="ideaCta" class="cta-btn idea-gen-cta">I love this idea! How do I start? →</a>
             </div>
           </div>
-      </div>
+        </div>
       </div>
     </div>
     <div class='secondary-ctas-bar'>
-      <a class='secondary-cta-item' href='https://redcross.sg/ghc26' target='_blank' rel='noopener noreferrer'>
+      <a class='secondary-cta-item' href='#action-section'>
         <svg class='secondary-cta-icon' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg>
         <div>
           <strong class='secondary-cta-title'>Start fundraising &rarr;</strong>
@@ -38,7 +54,7 @@
           <p class='secondary-cta-sub'>Pass it on — right now.</p>
         </div>
       </button>
-      <a class='secondary-cta-item' href='#deeda-donate'>
+      <a class='secondary-cta-item' href='https://go.redcross.sg/ghc26-pledge' target="_blank" rel="noopener noreferrer">
         <svg class='secondary-cta-icon' viewBox='0 0 24 24' fill='#1A1A1A' stroke='#1A1A1A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/></svg>
         <div>
           <strong class='secondary-cta-title'>Donate directly &rarr;</strong>
@@ -77,7 +93,7 @@
         <ul class="group-impact-list">
           <li><strong>$6,000</strong> provides a child with a sense of belonging and possibility for 1 year.</li>
         </ul>
-        <a href="https://redcross.sg/ghc26" target="_blank" rel="noopener noreferrer" class="cta-btn">Turn your care into action →</a>
+        <a href="#action-section" class="cta-btn">Turn your care into action →</a>
       </div>
 
       <div class="impact-block" style="--index:1">
@@ -95,7 +111,7 @@
           <li><strong>$400</strong> gives a vulnerable senior a full year of regular check-ins, warm companionship, and a friendly defense against the quiet health risk of loneliness.</li>
           <li><strong>$1,920</strong> gives an elderly individual one year of 24/7 peace of mind, to age safely and independently in their own homes.</li>
         </ul>
-        <a href="https://redcross.sg/ghc26" target="_blank" rel="noopener noreferrer" class="cta-btn">Turn your care into action →</a>
+        <a href="#action-section" class="cta-btn">Turn your care into action →</a>
       </div>
 
       <div class="impact-block" style="--index:2">
@@ -112,7 +128,7 @@
           <li><strong>$2,000</strong> covers one year of care services - nursing, therapy, outings, after-hours emergency ambulance and assistive support.</li>
           <li><strong>$8,000</strong> covers a resident or individual's care services and essential support for an entire year.</li>
         </ul>
-        <a href="https://redcross.sg/ghc26" target="_blank" rel="noopener noreferrer" class="cta-btn">Turn your care into action →</a>
+        <a href="#action-section" class="cta-btn">Turn your care into action →</a>
       </div>
 
       <div class="impact-block" style="--index:3">
@@ -127,7 +143,7 @@
         <ul class="group-impact-list">
           <li><strong>$600</strong> a month gives a vulnerable working family the sustained cash and grocery support to clear formal debts, build meaningful savings, and steadily journey toward self-reliance.</li>
         </ul>
-        <a href="https://redcross.sg/ghc26" target="_blank" rel="noopener noreferrer" class="cta-btn">Turn your care into action →</a>
+        <a href="#action-section" class="cta-btn">Turn your care into action →</a>
       </div>
 
       <div class="impact-block where-card-last" style="--index:4">
@@ -141,8 +157,85 @@
         <ul class="group-impact-list">
           <li><strong>$500</strong> provides 185 migrant workers with welcoming safe spaces, essential wellness workshops, and the reassuring support they need to thrive while working far from home.</li>
         </ul>
-        <a href="https://redcross.sg/ghc26" target="_blank" rel="noopener noreferrer" class="cta-btn">Turn your care into action →</a>
+        <a href="#action-section" class="cta-btn">Turn your care into action →</a>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- HOW TO START FUNDRAISING                                        -->
+  <!-- ===================================================== -->
+  <section class="section action-section" id="action-section" data-reveal>
+    <h2>How To Start Fundraising</h2>
+    <div class="how-steps">
+
+      <div class="how-step">
+        <div class="how-step-left">
+          <img class="hiw-icon" src="https://redcross.sg/images/2026/eFR/hiw-step1.jpg" alt="">
+          <div class='how-step-num'>1</div>
+        </div>
+        <div class="how-step-body">
+          <h3>Pick your idea and create your campaign page</h3>
+
+          <p>Not sure what to do? Check out the <a href="#ideaGen">idea generator</a> for inspiration. Then follow the link below and click <strong>"Fundraise for this"</strong> to set up your personal campaign — it just takes about 5 minutes. Once approved, you'll get a shareable link to kick things off.</p>
+          <a href="https://go.redcross.sg/spRjNP" target="_blank" rel="noopener noreferrer" class="cta-btn">Create your own fundraising campaign →</a>
+        </div>
+      </div>
+
+      <div class='hiw-arrow' aria-hidden='true'>
+        <svg width='60' height='40' viewBox='0 0 60 40' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <path d='M2 20 C10 8, 18 32, 28 20 C38 8, 46 32, 56 18' stroke='#F4A5A5' stroke-width='2.5' stroke-linecap='round' fill='none'/>
+          <path d='M50 12 L56 18 L48 22' stroke='#F4A5A5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/>
+        </svg>
+      </div>
+
+      <div class="how-step how-step-conditional">
+        <div class="how-step-left">
+          <img class="hiw-icon" src="https://redcross.sg/images/2026/eFR/hiw-step2.jpg" alt="">
+          <div class='how-step-num how-step-num-optional'>2</div>
+        </div>
+        <div class="how-step-body">
+          <h3>Register as a Fundraiser with Singapore Red Cross <span class="if-required-badge">Only if required</span></h3>
+          <p>If your fundraiser involves <strong>selling goods or hosting a public event</strong>, you'll need to submit a <strong>Third Party Fundraising Form</strong> to SRC first.</p>
+          <div class="condition-accordion">
+            <input type="checkbox" id="cond-yes" />
+            <label for="cond-yes" class="how-condition-label condition-toggle"><span>You <u>need</u> this form if your fundraiser involves</span><span class="condition-chevron">▾</span></label>
+            <ul class="how-condition-list condition-body">
+              <li>Selling or exchanging physical goods — baked goods, crafts, art prints, clothing, plants</li>
+              <li>Hosting a public event — stall, bazaar, sports day, concert, fair, community gathering</li>
+            </ul>
+          </div>
+          <div class="condition-accordion">
+            <input type="checkbox" id="cond-no" />
+            <label for="cond-no" class="how-condition-label how-condition-no condition-toggle"><span>You <u>do not need</u> this form if you are</span><span class="condition-chevron">▾</span></label>
+            <ul class="how-condition-list how-condition-list-no condition-body">
+              <li>Streaming or going live online</li>
+              <li>Offering digital services — commissions, edits, tutoring sessions over video call</li>
+              <li>Running a social media challenge or awareness campaign</li>
+            </ul>
+          </div>
+          <a href="https://drive.google.com/file/d/1DD1KOnb3k3blI6fn-E6Vcz9YR-4o2MY0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-outline">Download the registration form →</a>
+        </div>
+      </div>
+
+      <div class='hiw-arrow' aria-hidden='true'>
+        <svg width='60' height='40' viewBox='0 0 60 40' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <path d='M2 20 C10 8, 18 32, 28 20 C38 8, 46 32, 56 18' stroke='#F4A5A5' stroke-width='2.5' stroke-linecap='round' fill='none'/>
+          <path d='M50 12 L56 18 L48 22' stroke='#F4A5A5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/>
+        </svg>
+      </div>
+
+      <div class="how-step">
+        <div class="how-step-left">
+          <img class="hiw-icon" src="https://redcross.sg/images/2026/eFR/hiw-step3.jpg" alt="">
+          <div class='how-step-num'>3</div>
+        </div>
+        <div class="how-step-body">
+          <h3>Run your fundraiser and collect</h3>
+          <p>Do your thing. WhatsApp your family group, post an Instagram story, drop it in your Telegram chats, film a TikTok, or email your boss. Every donation goes directly to Singapore Red Cross to support families and individuals who need it most.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -253,8 +346,8 @@
   <section class="section cta-center" data-reveal>
     <h2>Make The Difference</h2>
     <p style="color: #555; max-width: 600px; margin: 0 auto 20px;">With your help, people like Mindy, Khai Fai, and Mdm Chan can get the support, care, and reassurance they deserve.</p>
-    <a href="https://redcross.sg/ghc26" target="_blank" rel="noopener noreferrer" class="cta-btn">Step Forward</a>
-    <p style="margin-top: 36px; color: #555; font-size: 0.95rem; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.65;">If you would like to consider a monthly gift to support the work we do, all donations are 250% tax deductible, and matched 50% by Tote Board.<br><a href="#deeda-donate" style="display: inline-block; margin-top: 10px; color: #333; text-decoration: underline;">Pledge a Gift →</a></p>
+    <a href="#action-section" class="cta-btn">Step Forward</a>
+    <p style="margin-top: 36px; color: #555; font-size: 0.95rem; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.65;">If you would like to consider a monthly gift to support the work we do, all donations are 250% tax deductible, and matched 50% by Tote Board.<br><a href="https://go.redcross.sg/ghc26-pledge" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 10px; color: #333; text-decoration: underline;">Pledge a Gift →</a></p>
   </section>
 
   <!-- ===================================================== -->
@@ -620,15 +713,6 @@
     }
   }
 
-  .tier-block {
-    background: #fff;
-    border: 2px solid #87CEEB;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    position: relative;
-  }
 
   .tier-popular-badge {
     background: #F4A5A5 !important;
@@ -1267,6 +1351,16 @@
     margin-top: 18px;
   }
 
+  .tier-block {
+    background: #fff;
+    border: 2px solid #87CEEB;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    position: relative;
+  }
+
   .how-intro {
     color: #666;
     margin: -8px 0 28px;
@@ -1567,13 +1661,6 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
 
-  /* Featured story: sky blue wash */
-  .featured-story {
-    background: #e0f3fb !important;
-    border-radius: 14px;
-    border: 1px solid #c0dff0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-  }
 
   /* Pull quote: pink left-border treatment (like the stamp frame) */
   .featured-quote {
@@ -1622,11 +1709,6 @@
     transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
   }
 
-  /* Paths */
-  .path-light {
-    background: var(--ghc-cream);
-    border: 1px solid #f0d4d4;
-  }
 
   .path-featured {
     background: var(--ghc-sky) !important;
@@ -1721,6 +1803,18 @@
   .subtype-card {
     border: 2px solid #87CEEB !important;
     box-shadow: none !important;
+  }
+
+  .featured-story {
+    background: #e0f3fb !important;
+    border-radius: 14px;
+    border: 1px solid #c0dff0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  }
+
+  .path-light {
+    background: #FFF0F0 !important;
+    border: 1px solid #f0d4d4;
   }
 
   h2 {
@@ -2092,6 +2186,10 @@
   opacity: 1;
 }
 
+.tier-block {
+  text-align: left !important;
+}
+
 .tier-desc {
   text-align: left;
 }
@@ -2269,7 +2367,6 @@ h3.impact-title { font-size: 1.3rem !important; margin-top: 10px; }
 .tier-block {
   background: linear-gradient(135deg, #fff 0%, #FFF8F0 100%) !important;
   border: 2px solid #87CEEB !important;
-  text-align: left !important;
 }
 .tier-amount {
   font-size: 2.4rem !important;
