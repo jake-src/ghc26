@@ -62,7 +62,18 @@ const IDEAS = (typeof GHC_IDEAS !== 'undefined' && Array.isArray(GHC_IDEAS)) ? G
   // Idea generator init — standalone, not coupled to share/modal setup
   (function() {
     let ideasInited = false;
+    let shuffleBound = false;
+    // CSP-safe binding: the live page's Content-Security-Policy blocks inline
+    // on* handlers, so the shuffle button is wired here, not via inline onclick.
+    function _bindShuffle() {
+      if (shuffleBound) return;
+      const btn = document.querySelector(".idea-gen-shuffle");
+      if (!btn) return;
+      shuffleBound = true;
+      btn.addEventListener("click", shuffleIdea);
+    }
     function _initIdeas() {
+      _bindShuffle();
       if (ideasInited) return;
       if (!IDEAS || !IDEAS.length) return;
       ideasInited = true;
@@ -75,6 +86,7 @@ const IDEAS = (typeof GHC_IDEAS !== 'undefined' && Array.isArray(GHC_IDEAS)) ? G
       _initIdeas();
     }
     setTimeout(function() {
+      _bindShuffle();
       const titleEl = document.getElementById("ideaTitle");
       if (titleEl && titleEl.textContent.trim() === "Loading...") {
         titleEl.textContent = 'Loading... ';
